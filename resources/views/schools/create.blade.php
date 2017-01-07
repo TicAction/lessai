@@ -9,7 +9,7 @@
 </div>
     <div class="form-group">
 
-    {!! Form::label('schoolboard_id',"Commission scolaire") !!}
+    {!! Form::label('schoolboard_name',"Commission scolaire") !!}
     {!! Form::text('schoolboard_name',null,['class'=>'form-control']) !!}
         </div>
 

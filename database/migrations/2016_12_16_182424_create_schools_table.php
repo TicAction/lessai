@@ -16,9 +16,6 @@ class CreateSchoolsTable extends Migration
         Schema::create('schools', function (Blueprint $table) {
             $table->increments('id');
             $table->string('school_name');
-            $table->integer('schoolboard_id')->index()->unsigned();
-
-            $table->foreign('schoolboard_id')->references('id')->on('schoolboards')->onDelete('cascade');
             $table->timestamps();
         });
     }

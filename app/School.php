@@ -11,7 +11,7 @@ class School extends Model
 
     public function schoolboard()
     {
-        return $this->belongsTo('App\Schoolboard');
+        return $this->belongsToMany('App\Schoolboard');
     }
 
     public function classrooms()

@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Schoolboard extends Model
 {
-    protected $fillable = ['schoolboard_name'];
-
+    public $fillable = ['schoolboard_name'];
+    public $dates =['created_at','updated_at'];
 
     public function schools()
     {
-        return $this->hasMany('App\School');
+        return $this->belongsToMany('App\School');
     }
 }

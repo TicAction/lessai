@@ -30,10 +30,10 @@ class SchoolController extends Controller
     public function create()
     {
         $school = new School();
-        $cs = new Schoolboard();
+//        $cs = new Schoolboard();
 
 
-        return view('schools.create',compact('school','cs'));
+        return view('schools.create',compact('school'));
     }
 
     /**

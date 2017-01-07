@@ -50,8 +50,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
+                            <li><a href="{{ url('/login') }}">{{trans("messages.Login")}}</a></li>
+                            <li><a href="{{ url('/register') }}">{{trans("messages.Register")}}</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -81,6 +81,15 @@
             @if(Session::has('message'))
                 <p class="alert alert-info">{{ Session::get('message') }}</p>
             @endif
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error  }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             @yield('content')
 
         </div>
